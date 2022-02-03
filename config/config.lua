@@ -1,16 +1,10 @@
 Config = {}
 
-
------------------------------------------------------------------------------------------------------------------------------------------
--- TOKEN
------------------------------------------------------------------------------------------------------------------------------------------
-Config.DripToken = "q7aDC42GjOC0ymLsQHTP7T5DhXrltg8a" -- Token Notify
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- WEBHOOK
 -----------------------------------------------------------------------------------------------------------------------------------------
-webhookrr = "https://discord.com/api/webhooks/936660989875716156/igxb0NffopDwuzTxR9ZAfLvskLvLG8JRvXwyON5xgxdCoKe9QJ22GIruG2ZCwH_idAVJ" -- WebHook para quem solicitou rr
-webhookanuncio = "https://discord.com/api/webhooks/936661179227590696/SLGJJYvgkoR3I1Zqpt2OHvTNf8vrRlPfLAb6rpedsKdUeJRyfgJlyxkn0Cde-7RSiKGz" -- WebHook para ver anuncios
+webhookrr = "" -- WebHook para quem solicitou rr
+webhookanuncio = "" -- WebHook para ver anuncios
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PERMISSAO
