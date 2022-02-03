@@ -17,24 +17,6 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- LIBERAR SCRIPT
 -----------------------------------------------------------------------------------------------------------------------------------------
-PerformHttpRequest('http://api.ipify.org/', function(errorCode, resultData, resultHeaders)
-	---- Liberar Drip ----
-	local DripRealToken = "q7aDC42GjOC0ymLsQHTP7T5DhXrltg8a"
-	---- Cliente Drip ----
-	local DripClientToken = Config.DripToken
-	print('DripCode - Checando TOKEN')
-	Wait(500)
-	if DripRealToken == DripClientToken  then 
-		print('DripCode - Token Autenticado')
-		Wait(500)
-		print('DripCode - Script Carregado')
-	else
-		print('DripCode - Token Não Autenticado')
-		print('DripCode - Desligando Servidor')
-        Wait(5000)
-        os.exit()
-	end
-end)
 
 RegisterCommand('rr',function(source,args)
 	local source = source
@@ -48,15 +30,16 @@ RegisterCommand('rr',function(source,args)
             TriggerClientEvent("Notify",-1,"rr",""..Config.NotifyRR.." "..args[1].." "..Config.NotifyRRConti..".")
             SendWebhookMessage(DripNotifyRR,"```[ID]: "..user_id.." \n[SOLICITOU]: RR DO SERVIDOR \n[SET]: "..perm..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
             Wait(600000)
-             local users = vRP.getUsers()
-                for k,v in pairs(users) do
-                local id = vRP.getUserSource(parseInt(k))
+            local users = vRP.getUsers()
+            for k,v in pairs(users) do
+            local id = vRP.getUserSource(parseInt(k))
                 if id then
                     vRP.kick(id,""..Config.NotifyKick..".")
                     vRP.kick(source,""..Config.NotifyKick..".")
-                    os.exit()
                 end
             end
+            Wait(5000)
+            os.exit()
         end
     end
 end)
